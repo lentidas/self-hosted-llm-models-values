@@ -1,3 +1,5 @@
+fullnameOverride: text-generation-inference
+
 deployment:
   resources:
     limits:
