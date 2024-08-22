@@ -1,5 +1,7 @@
 fullnameOverride: text-generation-inference
 
+model: meta-llama/Meta-Llama-3.1-8B-Instruct
+
 deployment:
   resources:
     limits:
