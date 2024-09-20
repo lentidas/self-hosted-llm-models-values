@@ -1,0 +1,9 @@
+chatui:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 2Gi
+    limits:
+      # Recommended to use large limits when web search is enabled
+      cpu: "4"
+      memory: 6Gi
