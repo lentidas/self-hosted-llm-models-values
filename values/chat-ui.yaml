@@ -7,14 +7,3 @@ chatui:
       # Recommended to use large limits when web search is enabled
       cpu: "4"
       memory: 6Gi
-
-  mongodbName: chatui
-
-mongodbSecretInit:
-  mongodbName: chatui
-  mongodbUsername: chatui
-
-mongodb:
-  auth:
-    databases: ["chatui"] # This must match the database name used in the init job.
-    usernames: ["chatui"] # This must match the username used in the init job.
