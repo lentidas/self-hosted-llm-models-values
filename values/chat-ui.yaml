@@ -60,10 +60,12 @@ chatui:
             "title": "Write a poem",
             "prompt": "Write a poem about a company's staff meeting."
           }
+        ],
+        "endpoints": [
+          {
+            "type" : "tgi",
+            "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
+          }
         ]
-        "endpoints": [{
-          "type" : "tgi",
-          "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080",
-        }]
       }
     ]
