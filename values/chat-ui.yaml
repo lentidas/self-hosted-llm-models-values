@@ -20,4 +20,7 @@ chatui:
       "traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
       "traefik.ingress.kubernetes.io/router.tls": "true"
 
+  oidc:
+    secretName: chatui-oidc
+
   # models: >
