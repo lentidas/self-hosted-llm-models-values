@@ -12,7 +12,7 @@ chatui:
   ingress:
     enabled: true
     tls: true
-    hostname: "chat-ui.is-ai.camptocamp.com"
+    hostname: "chat-ui.llm-models-sks.is-ai.camptocamp.com"
     extraHosts:
     - name: "chat-ui.is-ai.camptocamp.com"
     annotations:
