@@ -1,4 +1,5 @@
 chatui:
+  
   resources:
     requests:
       cpu: 100m
@@ -7,3 +8,13 @@ chatui:
       # Recommended to use large limits when web search is enabled
       cpu: "4"
       memory: 6Gi
+
+  ingress:
+    enabled: true
+    hostname: "chat-ui.llm-models-sks.is-ai.camptocamp.com"
+    annotations:
+      "cert-manager.io/cluster-issuer": "letsencrypt-prod"
+      "traefik.ingress.kubernetes.io/router.entrypoints": "websecure"
+      "traefik.ingress.kubernetes.io/router.tls": "true"
+
+  # models: >
