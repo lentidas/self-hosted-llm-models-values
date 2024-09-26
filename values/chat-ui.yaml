@@ -40,7 +40,7 @@ chatui:
           "tokenizerUrl": "https://huggingface.co/nsarrazin/llama3.1-tokenizer/resolve/main/tokenizer.json",
           "tokenizerConfigUrl": "https://huggingface.co/nsarrazin/llama3.1-tokenizer/raw/main/tokenizer_config.json"
         },
-        "tools": true,
+        "tools": false,
         "preprompt": "",
         "parameters": {
           "temperature": 0.6,
