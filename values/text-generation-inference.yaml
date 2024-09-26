@@ -23,3 +23,8 @@ tgi:
             operator: In
             values:
             - llm
+
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
