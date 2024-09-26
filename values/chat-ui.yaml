@@ -24,25 +24,30 @@ chatui:
   #   secretName: chatui-oidc
 
   # Configure ChatUI to use our self-hosted model deployed using TGI.
-  # This configuration is based on the official ChatUI documentation:
+  # This configuration is based on the official ChatUI documentation and their examples:
   # https://huggingface.co/docs/chat-ui/configuration/models/providers/tgi
+  # https://github.com/huggingface/chat-ui/blob/6cfc3a749a7de7e1c8bea26797760abdeac36c17/chart/env/prod.yaml
   models: >
     [
       {
         "name": "meta-llama/Llama-3.1-8B-Instruct",
         "displayName": "meta-llama/Llama-3.1-8B-Instruct",
         "description": "Meta's Llama is an accessible, open large language model (LLM) designed for developers, researchers, and businesses to build, experiment, and responsibly scale their generative AI ideas.",
-        "websiteUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+        "modelUrl": "https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "websiteUrl": "https://llama.meta.com/",
+        "logoUrl": "https://huggingface.co/datasets/huggingchat/models-logo/resolve/main/meta-logo.png",
+        "tokenizer": {
+          "tokenizerUrl": "https://huggingface.co/nsarrazin/llama3.1-tokenizer/resolve/main/tokenizer.json",
+          "tokenizerConfigUrl": "https://huggingface.co/nsarrazin/llama3.1-tokenizer/raw/main/tokenizer_config.json"
+        },
+        "tools": true,
         "preprompt": "",
-        "chatPromptTemplate" : "{{#each messages}}{{#ifUser}}User: {{content}}{{/ifUser}}<end_of_utterance>\nAssistant: {{#ifAssistant}}{{content}}\n{{/ifAssistant}}{{/each}}",
         "parameters": {
-          "temperature": 0.3,
-          "top_p": 0.95,
-          "repetition_penalty": 1.2,
-          "top_k": 50,
-          "truncate": 3072,
+          "temperature": 0.6,
+          "top_p": 0.9,
+          "stop": ["<|endoftext|>", "<|eot_id|>"],
           "max_new_tokens": 1024,
-          "stop": ["</s>"]
+          "truncate": 7167
         },
         "promptExamples": [
           {
