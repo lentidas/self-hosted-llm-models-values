@@ -47,7 +47,7 @@ chatui:
           "top_p": 0.9,
           "stop": ["<|endoftext|>", "<|eot_id|>"],
           "max_new_tokens": 1024,
-          "truncate": 7167
+          "truncate": 4094
         },
         "promptExamples": [
           {
@@ -64,7 +64,7 @@ chatui:
         "endpoints": [
           {
             "type" : "tgi",
-            "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
+            "endpointUrl": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
           }
         ]
       }
