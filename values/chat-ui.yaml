@@ -23,4 +23,50 @@ chatui:
   # oidc:
   #   secretName: chatui-oidc
 
-  # models: >
+  # Configure ChatUI to use our self-hosted model deployed using TGI.
+  # This configuration is based on the official ChatUI documentation:
+  # https://huggingface.co/docs/chat-ui/configuration/models/providers/tgi
+  models: >
+    [
+      {
+        "name": "meta-llama/Llama-3.1-8B-Instruct",
+        "displayName": "meta-llama/Llama-3.1-8B-Instruct",
+        "description": "Meta's Llama is an accessible, open large language model (LLM) designed for developers, researchers, and businesses to build, experiment, and responsibly scale their generative AI ideas.",
+        "websiteUrl": "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
+        "preprompt": "",
+        "chatPromptTemplate" : "<s>{{#each messages}}{{#ifUser}}[INST] {{#if @first}}{{#if @root.preprompt}}{{@root.preprompt}}\n{
+
+    {/if}
+
+    }{
+
+    {/if}
+
+    }{{content}} [/INST]{{/ifUser}}{{#ifAssistant}}{{content}}</s>{{/ifAssistant}}{{/each}}",
+        "parameters": {
+          "temperature": 0.3,
+          "top_p": 0.95,
+          "repetition_penalty": 1.2,
+          "top_k": 50,
+          "truncate": 3072,
+          "max_new_tokens": 1024,
+          "stop": ["</s>"]
+        },
+        "promptExamples": [
+          {
+            "title": "Ask a question",
+            "prompt": "Have you heard of Camptocamp?"
+          }, {
+            "title": "Code a snake game in Python",
+            "prompt": "Code a basic snake game in Python, giving explanations for each step."
+          }, {
+            "title": "Write a poem",
+            "prompt": "Write a poem about a company's staff meeting."
+          }
+        ]
+        "endpoints": [{
+          "type" : "tgi",
+          "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080",
+        }]
+      }
+    ]
