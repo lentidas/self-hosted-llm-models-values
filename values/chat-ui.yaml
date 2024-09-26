@@ -11,6 +11,7 @@ chatui:
 
   ingress:
     enabled: true
+    tls: true
     hostname: "chat-ui.llm-models-sks.is-ai.camptocamp.com"
     annotations:
       "cert-manager.io/cluster-issuer": "letsencrypt-prod"
