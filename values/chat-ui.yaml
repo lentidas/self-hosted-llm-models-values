@@ -64,7 +64,7 @@ chatui:
         "endpoints": [
           {
             "type" : "tgi",
-            "endpointUrl": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
+            "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
           }
         ]
       }
