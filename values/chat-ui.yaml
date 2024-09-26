@@ -67,5 +67,34 @@ chatui:
             "url": "http://gheleno-text-generation-inference-svc.gheleno-text-generation-inference:8080"
           }
         ]
+      },
+            {
+        "name": "mistralai/Mistral-7B-Instruct-v0.1",
+        "displayName": "mistralai/Mistral-7B-Instruct-v0.1",
+        "description": "Mistral 7B is a new Apache 2.0 model, released by Mistral AI that outperforms Llama2 13B in benchmarks.",
+        "websiteUrl": "https://mistral.ai/news/announcing-mistral-7b/",
+        "preprompt": "",
+        "chatPromptTemplate" : "<s>{{#each messages}}{{#ifUser}}[INST] {{#if @first}}{{#if @root.preprompt}}{{@root.preprompt}}\n{{/if}}{{/if}}{{content}} [/INST]{{/ifUser}}{{#ifAssistant}}{{content}}</s>{{/ifAssistant}}{{/each}}",
+        "parameters": {
+          "temperature": 0.1,
+          "top_p": 0.95,
+          "repetition_penalty": 1.2,
+          "top_k": 50,
+          "truncate": 3072,
+          "max_new_tokens": 1024,
+          "stop": ["</s>"]
+        },
+        "promptExamples": [
+          {
+            "title": "Ask a question",
+            "prompt": "Have you heard of Camptocamp?"
+          }, {
+            "title": "Code a snake game in Python",
+            "prompt": "Code a basic snake game in Python, giving explanations for each step."
+          }, {
+            "title": "Write a poem",
+            "prompt": "Write a poem about a company's staff meeting."
+          }
+        ]
       }
     ]
