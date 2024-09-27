@@ -17,3 +17,5 @@ deployment:
             - llm
 
 model: meta-llama/Meta-Llama-3.1-8B-Instruct
+
+huggingFaceUser: lentidas
